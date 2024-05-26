@@ -1,4 +1,4 @@
-import { TouchableOpacity, View } from 'react-native';
+import { Button, TouchableOpacity, View } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Color } from '@/constants/Colors';
 import { useChatStore } from '@/store/chatStore';
@@ -56,6 +56,10 @@ export function Conversations() {
             No conversations yet.
           </Typography>
         )}
+        <Button
+          onPress={() => navigation.navigate('chatSummary')}
+          title="Generate Insights"
+        />
       </View>
     </View>
   );
