@@ -1,12 +1,10 @@
 import { View } from 'react-native';
 import { Color } from '@/constants/Colors';
+import { useSettingsStore } from '@/store/settingsStore';
 import { Typography } from '../Typography';
 
-interface LevelProgressProps {
-  points: number;
-}
-
-export function LevelProgress({ points }: LevelProgressProps) {
+export function LevelProgress() {
+  const { score: points } = useSettingsStore();
   const level = Math.floor(points / 100) + 1;
   const progress = points % 100;
   const nextLevel = level + 1;

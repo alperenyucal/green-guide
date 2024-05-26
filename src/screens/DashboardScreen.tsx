@@ -1,5 +1,6 @@
 import { Conversations } from '@/components/Conversations';
 import { LevelProgress } from '@/components/LevelProgress';
+import { TodaysChallenges } from '@/components/TodaysChallenges';
 import { Typography } from '@/components/Typography';
 import { ScrollView, View, Image } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -24,7 +25,7 @@ export function DashboardScreen() {
         }}>
         <Image
           source={{
-            uri: 'https://i.pravatar.cc',
+            uri: 'https://i.pravatar.cc/150?u=51238',
           }}
           style={{
             width: 60,
@@ -34,10 +35,10 @@ export function DashboardScreen() {
         />
         <View style={{ gap: 4, flex: 1 }}>
           <Typography variant="default">John Doe</Typography>
-          <LevelProgress points={620} />
+          <LevelProgress />
         </View>
       </View>
-
+      <TodaysChallenges />
       <Conversations />
     </ScrollView>
   );

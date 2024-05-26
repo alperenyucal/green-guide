@@ -9,6 +9,7 @@ import { TabsParamList } from '../types/TabsParamList';
 import { DashboardScreen } from '../screens/DashboardScreen';
 import { MapScreen } from '../screens/MapScreen';
 import { ChatScreen } from '../screens/ChatScreen';
+import { GoalsScreen } from '../screens/GoalsScreen';
 
 export const Tab = createBottomTabNavigator<TabsParamList>();
 
@@ -34,9 +35,25 @@ export function TabsNavigator(props: TabNavigatorProps) {
         }}
       />
       <Tab.Screen
+        name="goals"
+        component={GoalsScreen}
+        options={{
+          headerShown: true,
+          title: 'Goals & Achievements',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={focused ? 'planet' : 'planet-outline'}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="map"
         component={MapScreen}
         options={{
+          headerShown: true,
+          title: 'Nearby Places',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'map' : 'map-outline'} color={color} />
           ),
@@ -49,7 +66,6 @@ export function TabsNavigator(props: TabNavigatorProps) {
           headerShown: true,
           title: 'GiGi Assistant',
           headerRight: () => <NewChatButton />,
-
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
               name={focused ? 'chatbox' : 'chatbox-outline'}

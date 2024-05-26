@@ -39,8 +39,8 @@ export function Conversations() {
               onPress={() =>
                 navigation.navigate('chat', { conversationId: conversation.id })
               }>
-              <Typography variant="default">
-                {conversation.title || 'Untitled'}
+              <Typography variant="default" style={{ flex: 1 }}>
+                {conversation.title.replace('Title:', '') || 'Untitled'}
               </Typography>
               <TouchableOpacity
                 style={{ padding: 12, marginHorizontal: -12 }}
